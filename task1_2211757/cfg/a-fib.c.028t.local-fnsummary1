@@ -1,0 +1,160 @@
+
+;; Function main (main, funcdef_no=6, decl_uid=2863, cgraph_uid=7, symbol_order=6)
+
+
+Analyzing function body size: main/6
+   fp_expression set
+
+IPA function summary for main/6 fp_expression
+  global time:     97.000000
+  self size:       53
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:35.000000, time:36.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+  calls:
+    free/12 function body not available
+      freq:1.00 loop depth: 0 size: 2 time: 11
+    printf/11 function body not available
+      freq:1.00 loop depth: 1 size: 3 time: 12
+    __builtin_fwrite/10 function body not available
+      freq:1.00 loop depth: 0 size: 5 time: 14
+    malloc/8 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+    scanf/7 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+
+int main ()
+{
+  int i;
+  int i;
+  double * fib;
+  int n;
+  int D.2880;
+  int n.0_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  struct FILE * stderr.1_4;
+  int n.2_5;
+  double * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  sizetype _9;
+  double * _10;
+  double _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  sizetype _14;
+  double * _15;
+  double _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  double * _19;
+  double _20;
+  int n.3_21;
+  long unsigned int _22;
+  long unsigned int _23;
+  double * _24;
+  double _25;
+  int n.4_26;
+  int _29;
+  int _43;
+  int _49;
+
+  <bb 2> :
+  scanf ("%d", &n);
+  n.0_1 = n;
+  _2 = (long unsigned int) n.0_1;
+  _3 = _2 * 8;
+  fib_37 = malloc (_3);
+  if (fib_37 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  stderr.1_4 = stderr;
+  __builtin_fwrite ("Memory allocation failed\n", 1, 25, stderr.1_4);
+  _49 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  *fib_37 = 0.0;
+  n.2_5 = n;
+  if (n.2_5 > 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = fib_37 + 8;
+  *_6 = 1.0e+0;
+
+  <bb 6> :
+  i_40 = 2;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _7 = (long unsigned int) i_27;
+  _8 = _7 * 8;
+  _9 = _8 + 18446744073709551608;
+  _10 = fib_37 + _9;
+  _11 = *_10;
+  _12 = (long unsigned int) i_27;
+  _13 = _12 * 8;
+  _14 = _13 + 18446744073709551600;
+  _15 = fib_37 + _14;
+  _16 = *_15;
+  _17 = (long unsigned int) i_27;
+  _18 = _17 * 8;
+  _19 = fib_37 + _18;
+  _20 = _11 + _16;
+  *_19 = _20;
+  i_47 = i_27 + 1;
+
+  <bb 8> :
+  # i_27 = PHI <i_40(6), i_47(7)>
+  n.3_21 = n;
+  if (i_27 < n.3_21)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_41 = 0;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _22 = (long unsigned int) i_28;
+  _23 = _22 * 8;
+  _24 = fib_37 + _23;
+  _25 = *_24;
+  printf ("%lf\n", _25);
+  i_45 = i_28 + 1;
+
+  <bb 11> :
+  # i_28 = PHI <i_41(9), i_45(10)>
+  n.4_26 = n;
+  if (i_28 < n.4_26)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  free (fib_37);
+  _43 = 0;
+
+  <bb 13> :
+  # _29 = PHI <_49(3), _43(12)>
+  n ={v} {CLOBBER};
+
+  <bb 14> :
+<L11>:
+  return _29;
+
+}
+
+

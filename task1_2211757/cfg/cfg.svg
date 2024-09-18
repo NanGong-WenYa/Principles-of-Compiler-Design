@@ -1,0 +1,340 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="736pt" height="2044pt" viewBox="0.00 0.00 736.00 2043.60">
+<g id="graph0" class="graph" transform="translate(37.58104852311317,1883.87750854923) scale(0.8705505632961243)" data-name="a-fib.c.015t.cfg">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-2039.6 732,-2039.6 732,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_main">
+
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="8,-8 8,-2027.6 720,-2027.6 720,-8 8,-8" style=""/>
+<text text-anchor="middle" x="364" y="-2011" font-family="Times,serif" font-size="14.00" style="">main ()</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_6_2">
+
+<polygon fill="#e0e0e0" stroke="darkgreen" stroke-width="2" points="130,-278 130,-655.2 316,-655.2 316,-278 130,-278" style=""/>
+<text text-anchor="middle" x="155.69" y="-638.6" font-family="Times,serif" font-size="14.00" style="">loop 2</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_6_1">
+
+<polygon fill="#e0e0e0" stroke="darkgreen" stroke-width="2" points="284,-663.2 284,-1288.4 532,-1288.4 532,-663.2 284,-663.2" style=""/>
+<text text-anchor="middle" x="309.69" y="-1271.8" font-family="Times,serif" font-size="14.00" style="">loop 1</text>
+</g>
+<!-- fn_6_basic_block_11 -->
+<g id="node1" class="node" pointer-events="visible" data-name="fn_6_basic_block_11">
+
+<polygon fill="lightgrey" stroke="black" points="137.86,-497.1 137.86,-621.9 278.14,-621.9 278.14,-497.1 137.86,-497.1" style=""/>
+<text text-anchor="start" x="145.86" y="-605.3" font-family="Times,serif" font-size="14.00" style="">&lt;bb 11&gt;:</text>
+<polyline fill="none" stroke="black" points="137.86,-597.1 278.14,-597.1" style=""/>
+<text text-anchor="start" x="145.86" y="-580.5" font-family="Times,serif" font-size="14.00" style="">n.4_26 = n;</text>
+<polyline fill="none" stroke="black" points="137.86,-572.3 278.14,-572.3" style=""/>
+<text text-anchor="start" x="145.86" y="-555.7" font-family="Times,serif" font-size="14.00" style="">if (i &lt; n.4_26)</text>
+<text text-anchor="start" x="145.86" y="-538.9" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 10&gt;; [INV]</text>
+<text text-anchor="start" x="145.86" y="-522.1" font-family="Times,serif" font-size="14.00" style="">else</text>
+<text text-anchor="start" x="145.86" y="-505.3" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 12&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_10 -->
+<g id="node2" class="node" pointer-events="visible" data-name="fn_6_basic_block_10">
+
+<polygon fill="lightgrey" stroke="black" points="138.14,-286.5 138.14,-460.1 307.86,-460.1 307.86,-286.5 138.14,-286.5" style=""/>
+<text text-anchor="start" x="146.14" y="-443.5" font-family="Times,serif" font-size="14.00" style="">&lt;bb 10&gt;:</text>
+<polyline fill="none" stroke="black" points="138.14,-435.3 307.86,-435.3" style=""/>
+<text text-anchor="start" x="146.14" y="-418.7" font-family="Times,serif" font-size="14.00" style="">_22 = (long unsigned int) i;</text>
+<polyline fill="none" stroke="black" points="138.14,-410.5 307.86,-410.5" style=""/>
+<text text-anchor="start" x="146.14" y="-393.9" font-family="Times,serif" font-size="14.00" style="">_23 = _22 * 8;</text>
+<polyline fill="none" stroke="black" points="138.14,-385.7 307.86,-385.7" style=""/>
+<text text-anchor="start" x="146.14" y="-369.1" font-family="Times,serif" font-size="14.00" style="">_24 = fib + _23;</text>
+<polyline fill="none" stroke="black" points="138.14,-360.9 307.86,-360.9" style=""/>
+<text text-anchor="start" x="146.14" y="-344.3" font-family="Times,serif" font-size="14.00" style="">_25 = *_24;</text>
+<polyline fill="none" stroke="black" points="138.14,-336.1 307.86,-336.1" style=""/>
+<text text-anchor="start" x="146.14" y="-319.5" font-family="Times,serif" font-size="14.00" style="">printf ("%lf\n", _25);</text>
+<polyline fill="none" stroke="black" points="138.14,-311.3 307.86,-311.3" style=""/>
+<text text-anchor="start" x="146.14" y="-294.7" font-family="Times,serif" font-size="14.00" style="">i = i + 1;</text>
+</g>
+<!-- fn_6_basic_block_11&#45;&gt;fn_6_basic_block_10 -->
+<g id="edge14" class="edge" data-name="fn_6_basic_block_11-&gt;fn_6_basic_block_10">
+
+<path fill="none" stroke="black" stroke-width="2" d="M208,-496.6C208,-483.87 216.09,-479.77 220.39,-471.63" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="223.4,-474.08 222.3,-463.55 216.59,-472.47 223.4,-474.08" style=""/>
+</g>
+<!-- fn_6_basic_block_12 -->
+<g id="node13" class="node" pointer-events="visible" data-name="fn_6_basic_block_12">
+
+<polygon fill="lightgrey" stroke="black" points="36.3,-336.1 36.3,-410.5 119.7,-410.5 119.7,-336.1 36.3,-336.1" style=""/>
+<text text-anchor="start" x="44.3" y="-393.9" font-family="Times,serif" font-size="14.00" style="">&lt;bb 12&gt;:</text>
+<polyline fill="none" stroke="black" points="36.3,-385.7 119.7,-385.7" style=""/>
+<text text-anchor="start" x="44.3" y="-369.1" font-family="Times,serif" font-size="14.00" style="">free (fib);</text>
+<polyline fill="none" stroke="black" points="36.3,-360.9 119.7,-360.9" style=""/>
+<text text-anchor="start" x="44.3" y="-344.3" font-family="Times,serif" font-size="14.00" style="">D.2880 = 0;</text>
+</g>
+<!-- fn_6_basic_block_11&#45;&gt;fn_6_basic_block_12 -->
+<g id="edge15" class="edge" data-name="fn_6_basic_block_11-&gt;fn_6_basic_block_12">
+
+<path fill="none" stroke="black" stroke-width="2" d="M208,-496.6C208,-456.8 158.71,-483.28 126,-460.6 104.4,-445.63 84.48,-442.56 79.3,-422.59" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="82.97,-423.84 78.35,-414.31 76.01,-424.64 82.97,-423.84" style=""/>
+</g>
+<!-- fn_6_basic_block_10&#45;&gt;fn_6_basic_block_11 -->
+<g id="edge13" class="edge" data-name="fn_6_basic_block_10-&gt;fn_6_basic_block_11">
+
+<path fill="none" stroke="blue" stroke-width="2" stroke-dasharray="1,5" d="M223,-285.3C223,-266.44 294.6,-272.89 307.86,-286.3 314.67,-293.19 310.74,-451.36 307.86,-460.6 302.07,-479.16 289.15,-478.15 283,-496.6 278.61,-509.78 288.08,-611.8 278.14,-621.5 269.6,-629.83 233.02,-635.13 216.34,-630.16" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="219.96,-628.73 210.23,-624.55 215.23,-633.89 219.96,-628.73" style=""/>
+</g>
+<!-- fn_6_basic_block_8 -->
+<g id="node3" class="node" pointer-events="visible" data-name="fn_6_basic_block_8">
+
+<polygon fill="lightgrey" stroke="black" points="341.36,-1130.3 341.36,-1255.1 474.64,-1255.1 474.64,-1130.3 341.36,-1130.3" style=""/>
+<text text-anchor="start" x="349.36" y="-1238.5" font-family="Times,serif" font-size="14.00" style="">&lt;bb 8&gt;:</text>
+<polyline fill="none" stroke="black" points="341.36,-1230.3 474.64,-1230.3" style=""/>
+<text text-anchor="start" x="349.36" y="-1213.7" font-family="Times,serif" font-size="14.00" style="">n.3_21 = n;</text>
+<polyline fill="none" stroke="black" points="341.36,-1205.5 474.64,-1205.5" style=""/>
+<text text-anchor="start" x="349.36" y="-1188.9" font-family="Times,serif" font-size="14.00" style="">if (i &lt; n.3_21)</text>
+<text text-anchor="start" x="349.36" y="-1172.1" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 7&gt;; [INV]</text>
+<text text-anchor="start" x="349.36" y="-1155.3" font-family="Times,serif" font-size="14.00" style="">else</text>
+<text text-anchor="start" x="349.36" y="-1138.5" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 9&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_7 -->
+<g id="node4" class="node" pointer-events="visible" data-name="fn_6_basic_block_7">
+
+<polygon fill="lightgrey" stroke="black" points="292.16,-671.7 292.16,-1093.3 523.84,-1093.3 523.84,-671.7 292.16,-671.7" style=""/>
+<text text-anchor="start" x="300.16" y="-1076.7" font-family="Times,serif" font-size="14.00" style="">&lt;bb 7&gt;:</text>
+<polyline fill="none" stroke="black" points="292.16,-1068.5 523.84,-1068.5" style=""/>
+<text text-anchor="start" x="300.16" y="-1051.9" font-family="Times,serif" font-size="14.00" style="">_7 = (long unsigned int) i;</text>
+<polyline fill="none" stroke="black" points="292.16,-1043.7 523.84,-1043.7" style=""/>
+<text text-anchor="start" x="300.16" y="-1027.1" font-family="Times,serif" font-size="14.00" style="">_8 = _7 * 8;</text>
+<polyline fill="none" stroke="black" points="292.16,-1018.9 523.84,-1018.9" style=""/>
+<text text-anchor="start" x="300.16" y="-1002.3" font-family="Times,serif" font-size="14.00" style="">_9 = _8 + 18446744073709551608;</text>
+<polyline fill="none" stroke="black" points="292.16,-994.1 523.84,-994.1" style=""/>
+<text text-anchor="start" x="300.16" y="-977.5" font-family="Times,serif" font-size="14.00" style="">_10 = fib + _9;</text>
+<polyline fill="none" stroke="black" points="292.16,-969.3 523.84,-969.3" style=""/>
+<text text-anchor="start" x="300.16" y="-952.7" font-family="Times,serif" font-size="14.00" style="">_11 = *_10;</text>
+<polyline fill="none" stroke="black" points="292.16,-944.5 523.84,-944.5" style=""/>
+<text text-anchor="start" x="300.16" y="-927.9" font-family="Times,serif" font-size="14.00" style="">_12 = (long unsigned int) i;</text>
+<polyline fill="none" stroke="black" points="292.16,-919.7 523.84,-919.7" style=""/>
+<text text-anchor="start" x="300.16" y="-903.1" font-family="Times,serif" font-size="14.00" style="">_13 = _12 * 8;</text>
+<polyline fill="none" stroke="black" points="292.16,-894.9 523.84,-894.9" style=""/>
+<text text-anchor="start" x="300.16" y="-878.3" font-family="Times,serif" font-size="14.00" style="">_14 = _13 + 18446744073709551600;</text>
+<polyline fill="none" stroke="black" points="292.16,-870.1 523.84,-870.1" style=""/>
+<text text-anchor="start" x="300.16" y="-853.5" font-family="Times,serif" font-size="14.00" style="">_15 = fib + _14;</text>
+<polyline fill="none" stroke="black" points="292.16,-845.3 523.84,-845.3" style=""/>
+<text text-anchor="start" x="300.16" y="-828.7" font-family="Times,serif" font-size="14.00" style="">_16 = *_15;</text>
+<polyline fill="none" stroke="black" points="292.16,-820.5 523.84,-820.5" style=""/>
+<text text-anchor="start" x="300.16" y="-803.9" font-family="Times,serif" font-size="14.00" style="">_17 = (long unsigned int) i;</text>
+<polyline fill="none" stroke="black" points="292.16,-795.7 523.84,-795.7" style=""/>
+<text text-anchor="start" x="300.16" y="-779.1" font-family="Times,serif" font-size="14.00" style="">_18 = _17 * 8;</text>
+<polyline fill="none" stroke="black" points="292.16,-770.9 523.84,-770.9" style=""/>
+<text text-anchor="start" x="300.16" y="-754.3" font-family="Times,serif" font-size="14.00" style="">_19 = fib + _18;</text>
+<polyline fill="none" stroke="black" points="292.16,-746.1 523.84,-746.1" style=""/>
+<text text-anchor="start" x="300.16" y="-729.5" font-family="Times,serif" font-size="14.00" style="">_20 = _11 + _16;</text>
+<polyline fill="none" stroke="black" points="292.16,-721.3 523.84,-721.3" style=""/>
+<text text-anchor="start" x="300.16" y="-704.7" font-family="Times,serif" font-size="14.00" style="">*_19 = _20;</text>
+<polyline fill="none" stroke="black" points="292.16,-696.5 523.84,-696.5" style=""/>
+<text text-anchor="start" x="300.16" y="-679.9" font-family="Times,serif" font-size="14.00" style="">i = i + 1;</text>
+</g>
+<!-- fn_6_basic_block_8&#45;&gt;fn_6_basic_block_7 -->
+<g id="edge10" class="edge" data-name="fn_6_basic_block_8-&gt;fn_6_basic_block_7">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1129.8C408,-1118.42 408,-1113.12 408,-1105.25" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="411.5,-1106.83 408,-1096.83 404.5,-1106.83 411.5,-1106.83" style=""/>
+</g>
+<!-- fn_6_basic_block_9 -->
+<g id="node12" class="node" pointer-events="visible" data-name="fn_6_basic_block_9">
+
+<polygon fill="lightgrey" stroke="black" points="141.36,-849.3 141.36,-915.7 274.64,-915.7 274.64,-849.3 141.36,-849.3" style=""/>
+<text text-anchor="start" x="149.36" y="-899.1" font-family="Times,serif" font-size="14.00" style="">&lt;bb 9&gt;:</text>
+<polyline fill="none" stroke="black" points="141.36,-890.9 274.64,-890.9" style=""/>
+<text text-anchor="start" x="149.36" y="-874.3" font-family="Times,serif" font-size="14.00" style="">i = 0;</text>
+<text text-anchor="start" x="149.36" y="-857.5" font-family="Times,serif" font-size="14.00" style="">goto &lt;bb 11&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_8&#45;&gt;fn_6_basic_block_9 -->
+<g id="edge11" class="edge" data-name="fn_6_basic_block_8-&gt;fn_6_basic_block_9">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1129.8C408,-1070.7 324.05,-1133.19 280,-1093.8 219.45,-1039.65 208.88,-1004.79 208.06,-927.67" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="211.57,-929.51 208.02,-919.53 204.57,-929.54 211.57,-929.51" style=""/>
+</g>
+<!-- fn_6_basic_block_7&#45;&gt;fn_6_basic_block_8 -->
+<g id="edge9" class="edge" data-name="fn_6_basic_block_7-&gt;fn_6_basic_block_8">
+
+<path fill="none" stroke="blue" stroke-width="2" stroke-dasharray="1,5" d="M408,-670.5C408,-644.76 505.72,-653.22 523.84,-671.5 532.1,-679.83 528.85,-1083.19 523.84,-1093.8 513.06,-1116.59 491.26,-1107.24 480,-1129.8 473.79,-1142.23 484.6,-1245.02 474.64,-1254.7 466.59,-1262.52 432.47,-1267.57 416.42,-1263.11" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="420.09,-1261.68 410.27,-1257.7 415.47,-1266.93 420.09,-1261.68" style=""/>
+</g>
+<!-- fn_6_basic_block_0 -->
+<g id="node5" class="node" pointer-events="visible" data-name="fn_6_basic_block_0">
+
+<polygon fill="white" stroke="black" points="408,-1994.8 346.75,-1976.8 408,-1958.8 469.25,-1976.8 408,-1994.8" style=""/>
+<polyline fill="none" stroke="black" points="358.26,-1980.18 358.26,-1973.42" style=""/>
+<polyline fill="none" stroke="black" points="396.49,-1962.18 419.51,-1962.18" style=""/>
+<polyline fill="none" stroke="black" points="457.74,-1973.42 457.74,-1980.18" style=""/>
+<polyline fill="none" stroke="black" points="419.51,-1991.42 396.49,-1991.42" style=""/>
+<text text-anchor="middle" x="408" y="-1972.6" font-family="Times,serif" font-size="14.00" style="">ENTRY</text>
+</g>
+<!-- fn_6_basic_block_1 -->
+<g id="node6" class="node" pointer-events="visible" data-name="fn_6_basic_block_1">
+
+<polygon fill="white" stroke="black" points="96,-52 49.09,-34 96,-16 142.91,-34 96,-52" style=""/>
+<polyline fill="none" stroke="black" points="60.3,-38.3 60.3,-29.7" style=""/>
+<polyline fill="none" stroke="black" points="84.8,-20.3 107.2,-20.3" style=""/>
+<polyline fill="none" stroke="black" points="131.7,-29.7 131.7,-38.3" style=""/>
+<polyline fill="none" stroke="black" points="107.2,-47.7 84.8,-47.7" style=""/>
+<text text-anchor="middle" x="96" y="-29.8" font-family="Times,serif" font-size="14.00" style="">EXIT</text>
+</g>
+<!-- fn_6_basic_block_0&#45;&gt;fn_6_basic_block_1 -->
+<!-- fn_6_basic_block_2 -->
+<g id="node7" class="node" pointer-events="visible" data-name="fn_6_basic_block_2">
+
+<polygon fill="lightgrey" stroke="black" points="312.83,-1698.3 312.83,-1922.3 503.17,-1922.3 503.17,-1698.3 312.83,-1698.3" style=""/>
+<text text-anchor="start" x="320.83" y="-1905.7" font-family="Times,serif" font-size="14.00" style="">&lt;bb 2&gt;:</text>
+<polyline fill="none" stroke="black" points="312.83,-1897.5 503.17,-1897.5" style=""/>
+<text text-anchor="start" x="320.83" y="-1880.9" font-family="Times,serif" font-size="14.00" style="">scanf ("%d", &amp;n);</text>
+<polyline fill="none" stroke="black" points="312.83,-1872.7 503.17,-1872.7" style=""/>
+<text text-anchor="start" x="320.83" y="-1856.1" font-family="Times,serif" font-size="14.00" style="">n.0_1 = n;</text>
+<polyline fill="none" stroke="black" points="312.83,-1847.9 503.17,-1847.9" style=""/>
+<text text-anchor="start" x="320.83" y="-1831.3" font-family="Times,serif" font-size="14.00" style="">_2 = (long unsigned int) n.0_1;</text>
+<polyline fill="none" stroke="black" points="312.83,-1823.1 503.17,-1823.1" style=""/>
+<text text-anchor="start" x="320.83" y="-1806.5" font-family="Times,serif" font-size="14.00" style="">_3 = _2 * 8;</text>
+<polyline fill="none" stroke="black" points="312.83,-1798.3 503.17,-1798.3" style=""/>
+<text text-anchor="start" x="320.83" y="-1781.7" font-family="Times,serif" font-size="14.00" style="">fib = malloc (_3);</text>
+<polyline fill="none" stroke="black" points="312.83,-1773.5 503.17,-1773.5" style=""/>
+<text text-anchor="start" x="320.83" y="-1756.9" font-family="Times,serif" font-size="14.00" style="">if (fib == 0B)</text>
+<text text-anchor="start" x="320.83" y="-1740.1" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 3&gt;; [INV]</text>
+<text text-anchor="start" x="320.83" y="-1723.3" font-family="Times,serif" font-size="14.00" style="">else</text>
+<text text-anchor="start" x="320.83" y="-1706.5" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 4&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_0&#45;&gt;fn_6_basic_block_2 -->
+<g id="edge1" class="edge" data-name="fn_6_basic_block_0-&gt;fn_6_basic_block_2">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M408,-1958.8C408,-1947.43 408,-1942.12 408,-1934.25" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="411.5,-1935.83 408,-1925.83 404.5,-1935.83 411.5,-1935.83" style=""/>
+</g>
+<!-- fn_6_basic_block_3 -->
+<g id="node8" class="node" pointer-events="visible" data-name="fn_6_basic_block_3">
+
+<polygon fill="lightgrey" stroke="black" points="325.66,-302.9 325.66,-443.7 712.34,-443.7 712.34,-302.9 325.66,-302.9" style=""/>
+<text text-anchor="start" x="333.66" y="-427.1" font-family="Times,serif" font-size="14.00" style="">&lt;bb 3&gt;:</text>
+<polyline fill="none" stroke="black" points="325.66,-418.9 712.34,-418.9" style=""/>
+<text text-anchor="start" x="333.66" y="-402.3" font-family="Times,serif" font-size="14.00" style="">stderr.1_4 = stderr;</text>
+<polyline fill="none" stroke="black" points="325.66,-394.1 712.34,-394.1" style=""/>
+<text text-anchor="start" x="333.66" y="-377.5" font-family="Times,serif" font-size="14.00" style="">__builtin_fwrite ("Memory allocation failed\n", 1, 25, stderr.1_4);</text>
+<polyline fill="none" stroke="black" points="325.66,-369.3 712.34,-369.3" style=""/>
+<text text-anchor="start" x="333.66" y="-352.7" font-family="Times,serif" font-size="14.00" style="">D.2880 = 1;</text>
+<polyline fill="none" stroke="black" points="325.66,-344.5 712.34,-344.5" style=""/>
+<text text-anchor="start" x="333.66" y="-327.9" font-family="Times,serif" font-size="14.00" style="">// predicted unlikely by early return (on trees) predictor.</text>
+<text text-anchor="start" x="333.66" y="-311.1" font-family="Times,serif" font-size="14.00" style="">goto &lt;bb 13&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_2&#45;&gt;fn_6_basic_block_3 -->
+<g id="edge2" class="edge" data-name="fn_6_basic_block_2-&gt;fn_6_basic_block_3">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1697.8C408,-1660.42 460.11,-1690.55 484,-1661.8 549.61,-1582.85 543,-1541.15 543,-1438.5 543,-1438.5 543,-1438.5 543,-881.5 543,-784.43 541.31,-760.13 536,-663.2 530.87,-569.67 519.92,-543.91 519.05,-455.68" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="522.56,-457.31 519.01,-447.33 515.56,-457.34 522.56,-457.31" style=""/>
+</g>
+<!-- fn_6_basic_block_4 -->
+<g id="node9" class="node" pointer-events="visible" data-name="fn_6_basic_block_4">
+
+<polygon fill="lightgrey" stroke="black" points="341.36,-1511.7 341.36,-1661.3 474.64,-1661.3 474.64,-1511.7 341.36,-1511.7" style=""/>
+<text text-anchor="start" x="349.36" y="-1644.7" font-family="Times,serif" font-size="14.00" style="">&lt;bb 4&gt;:</text>
+<polyline fill="none" stroke="black" points="341.36,-1636.5 474.64,-1636.5" style=""/>
+<text text-anchor="start" x="349.36" y="-1619.9" font-family="Times,serif" font-size="14.00" style="">*fib = 0.0;</text>
+<polyline fill="none" stroke="black" points="341.36,-1611.7 474.64,-1611.7" style=""/>
+<text text-anchor="start" x="349.36" y="-1595.1" font-family="Times,serif" font-size="14.00" style="">n.2_5 = n;</text>
+<polyline fill="none" stroke="black" points="341.36,-1586.9 474.64,-1586.9" style=""/>
+<text text-anchor="start" x="349.36" y="-1570.3" font-family="Times,serif" font-size="14.00" style="">if (n.2_5 &gt; 1)</text>
+<text text-anchor="start" x="349.36" y="-1553.5" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 5&gt;; [INV]</text>
+<text text-anchor="start" x="349.36" y="-1536.7" font-family="Times,serif" font-size="14.00" style="">else</text>
+<text text-anchor="start" x="349.36" y="-1519.9" font-family="Times,serif" font-size="14.00" style="">  goto &lt;bb 6&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_2&#45;&gt;fn_6_basic_block_4 -->
+<g id="edge3" class="edge" data-name="fn_6_basic_block_2-&gt;fn_6_basic_block_4">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1697.8C408,-1686.43 408,-1681.12 408,-1673.25" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="411.5,-1674.83 408,-1664.83 404.5,-1674.83 411.5,-1674.83" style=""/>
+</g>
+<!-- fn_6_basic_block_13 -->
+<g id="node14" class="node" pointer-events="visible" data-name="fn_6_basic_block_13">
+
+<polygon fill="lightgrey" stroke="black" points="36.1,-199.9 36.1,-249.5 155.9,-249.5 155.9,-199.9 36.1,-199.9" style=""/>
+<text text-anchor="start" x="44.1" y="-232.9" font-family="Times,serif" font-size="14.00" style="">&lt;bb 13&gt;:</text>
+<polyline fill="none" stroke="black" points="36.1,-224.7 155.9,-224.7" style=""/>
+<text text-anchor="start" x="44.1" y="-208.1" font-family="Times,serif" font-size="14.00" style="">n = {CLOBBER};</text>
+</g>
+<!-- fn_6_basic_block_3&#45;&gt;fn_6_basic_block_13 -->
+<g id="edge4" class="edge" data-name="fn_6_basic_block_3-&gt;fn_6_basic_block_13">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M519,-302.3C519,-258.46 156.46,-291.56 102.64,-259.13" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="106.49,-258.48 97.78,-252.45 100.83,-262.59 106.49,-258.48" style=""/>
+</g>
+<!-- fn_6_basic_block_5 -->
+<g id="node10" class="node" pointer-events="visible" data-name="fn_6_basic_block_5">
+
+<polygon fill="lightgrey" stroke="black" points="360.8,-1400.3 360.8,-1474.7 455.2,-1474.7 455.2,-1400.3 360.8,-1400.3" style=""/>
+<text text-anchor="start" x="368.8" y="-1458.1" font-family="Times,serif" font-size="14.00" style="">&lt;bb 5&gt;:</text>
+<polyline fill="none" stroke="black" points="360.8,-1449.9 455.2,-1449.9" style=""/>
+<text text-anchor="start" x="368.8" y="-1433.3" font-family="Times,serif" font-size="14.00" style="">_6 = fib + 8;</text>
+<polyline fill="none" stroke="black" points="360.8,-1425.1 455.2,-1425.1" style=""/>
+<text text-anchor="start" x="368.8" y="-1408.5" font-family="Times,serif" font-size="14.00" style="">*_6 = 1.0e+0;</text>
+</g>
+<!-- fn_6_basic_block_4&#45;&gt;fn_6_basic_block_5 -->
+<g id="edge5" class="edge" data-name="fn_6_basic_block_4-&gt;fn_6_basic_block_5">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1511.2C408,-1499.83 408,-1494.52 408,-1486.65" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="411.5,-1488.23 408,-1478.23 404.5,-1488.23 411.5,-1488.23" style=""/>
+</g>
+<!-- fn_6_basic_block_6 -->
+<g id="node11" class="node" pointer-events="visible" data-name="fn_6_basic_block_6">
+
+<polygon fill="lightgrey" stroke="black" points="344.86,-1296.9 344.86,-1363.3 471.14,-1363.3 471.14,-1296.9 344.86,-1296.9" style=""/>
+<text text-anchor="start" x="352.86" y="-1346.7" font-family="Times,serif" font-size="14.00" style="">&lt;bb 6&gt;:</text>
+<polyline fill="none" stroke="black" points="344.86,-1338.5 471.14,-1338.5" style=""/>
+<text text-anchor="start" x="352.86" y="-1321.9" font-family="Times,serif" font-size="14.00" style="">i = 2;</text>
+<text text-anchor="start" x="352.86" y="-1305.1" font-family="Times,serif" font-size="14.00" style="">goto &lt;bb 8&gt;; [INV]</text>
+</g>
+<!-- fn_6_basic_block_4&#45;&gt;fn_6_basic_block_6 -->
+<g id="edge6" class="edge" data-name="fn_6_basic_block_4-&gt;fn_6_basic_block_6">
+
+<path fill="none" stroke="black" stroke-width="2" d="M408,-1511.2C408,-1481.61 366.18,-1501.17 352,-1475.2 335.94,-1445.79 335.94,-1429.21 352,-1399.8 363.85,-1378.09 395.02,-1388.2 404.93,-1374.81" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="407.87,-1377.29 407.19,-1366.72 401.13,-1375.41 407.87,-1377.29" style=""/>
+</g>
+<!-- fn_6_basic_block_5&#45;&gt;fn_6_basic_block_6 -->
+<g id="edge7" class="edge" data-name="fn_6_basic_block_5-&gt;fn_6_basic_block_6">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M408,-1399.8C408,-1388.43 408,-1383.12 408,-1375.25" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="411.5,-1376.83 408,-1366.83 404.5,-1376.83 411.5,-1376.83" style=""/>
+</g>
+<!-- fn_6_basic_block_6&#45;&gt;fn_6_basic_block_8 -->
+<g id="edge8" class="edge" data-name="fn_6_basic_block_6-&gt;fn_6_basic_block_8">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M408,-1296.4C408,-1282.83 408,-1276.9 408,-1267.15" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="411.5,-1268.73 408,-1258.73 404.5,-1268.73 411.5,-1268.73" style=""/>
+</g>
+<!-- fn_6_basic_block_9&#45;&gt;fn_6_basic_block_11 -->
+<g id="edge12" class="edge" data-name="fn_6_basic_block_9-&gt;fn_6_basic_block_11">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M208,-848.5C208,-751.98 208,-725.02 208,-633.93" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="211.5,-635.53 208,-625.53 204.5,-635.53 211.5,-635.53" style=""/>
+</g>
+<!-- fn_6_basic_block_12&#45;&gt;fn_6_basic_block_13 -->
+<g id="edge16" class="edge" data-name="fn_6_basic_block_12-&gt;fn_6_basic_block_13">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M78,-335.3C78,-300.64 92.4,-290.74 95.44,-261.3" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="98.85,-263.18 95.85,-253.02 91.86,-262.84 98.85,-263.18" style=""/>
+</g>
+<!-- fn_6_basic_block_14 -->
+<g id="node15" class="node" pointer-events="visible" data-name="fn_6_basic_block_14">
+
+<polygon fill="lightgrey" stroke="black" points="46.79,-88.5 46.79,-162.9 145.21,-162.9 145.21,-88.5 46.79,-88.5" style=""/>
+<text text-anchor="start" x="54.79" y="-146.3" font-family="Times,serif" font-size="14.00" style="">&lt;bb 14&gt;:</text>
+<polyline fill="none" stroke="black" points="46.79,-138.1 145.21,-138.1" style=""/>
+<text text-anchor="start" x="54.79" y="-121.5" font-family="Times,serif" font-size="14.00" style="">&lt;L11&gt;:</text>
+<polyline fill="none" stroke="black" points="46.79,-113.3 145.21,-113.3" style=""/>
+<text text-anchor="start" x="54.79" y="-96.7" font-family="Times,serif" font-size="14.00" style="">return D.2880;</text>
+</g>
+<!-- fn_6_basic_block_13&#45;&gt;fn_6_basic_block_14 -->
+<g id="edge17" class="edge" data-name="fn_6_basic_block_13-&gt;fn_6_basic_block_14">
+
+<path fill="none" stroke="blue" stroke-width="2" d="M96,-199.4C96,-188.02 96,-182.72 96,-174.85" style=""/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="99.5,-176.43 96,-166.43 92.5,-176.43 99.5,-176.43" style=""/>
+</g>
+<!-- fn_6_basic_block_14&#45;&gt;fn_6_basic_block_1 -->
+<g id="edge18" class="edge" data-name="fn_6_basic_block_14-&gt;fn_6_basic_block_1">
+
+<path fill="none" stroke="black" stroke-width="2" d="M96,-88C96,-76.62 96,-71.32 96,-63.45" style=""/>
+<polygon fill="black" stroke="black" stroke-width="2" points="99.5,-65.03 96,-55.03 92.5,-65.03 99.5,-65.03" style=""/>
+</g>
+</g>
+</svg>

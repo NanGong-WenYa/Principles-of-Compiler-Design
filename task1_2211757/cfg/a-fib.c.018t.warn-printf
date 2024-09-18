@@ -1,0 +1,111 @@
+
+;; Function main (main, funcdef_no=6, decl_uid=2863, cgraph_uid=7, symbol_order=6)
+
+fib.c:34: printf: objsize = 9223372036854775807, fmtstr = "%lf
+"
+  Directive 1 at offset 0: "%lf"
+    Result: 3, 8, 317, 322 (3, 8, 317, 322)
+  Directive 2 at offset 3: "
+", length = 1
+    Result: 1, 1, 1, 1 (4, 9, 318, 323)
+  Directive 3 at offset 4: "", length = 1
+int main ()
+{
+  int i;
+  int i;
+  double * fib;
+  int n;
+  int D.2880;
+
+  <bb 2> :
+  scanf ("%d", &n);
+  n.0_1 = n;
+  _2 = (long unsigned int) n.0_1;
+  _3 = _2 * 8;
+  fib = malloc (_3);
+  if (fib == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  stderr.1_4 = stderr;
+  __builtin_fwrite ("Memory allocation failed\n", 1, 25, stderr.1_4);
+  D.2880 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  *fib = 0.0;
+  n.2_5 = n;
+  if (n.2_5 > 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = fib + 8;
+  *_6 = 1.0e+0;
+
+  <bb 6> :
+  i = 2;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _7 = (long unsigned int) i;
+  _8 = _7 * 8;
+  _9 = _8 + 18446744073709551608;
+  _10 = fib + _9;
+  _11 = *_10;
+  _12 = (long unsigned int) i;
+  _13 = _12 * 8;
+  _14 = _13 + 18446744073709551600;
+  _15 = fib + _14;
+  _16 = *_15;
+  _17 = (long unsigned int) i;
+  _18 = _17 * 8;
+  _19 = fib + _18;
+  _20 = _11 + _16;
+  *_19 = _20;
+  i = i + 1;
+
+  <bb 8> :
+  n.3_21 = n;
+  if (i < n.3_21)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i = 0;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _22 = (long unsigned int) i;
+  _23 = _22 * 8;
+  _24 = fib + _23;
+  _25 = *_24;
+  printf ("%lf\n", _25);
+  i = i + 1;
+
+  <bb 11> :
+  n.4_26 = n;
+  if (i < n.4_26)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  free (fib);
+  D.2880 = 0;
+
+  <bb 13> :
+  n = {CLOBBER};
+
+  <bb 14> :
+<L11>:
+  return D.2880;
+
+}
+
+

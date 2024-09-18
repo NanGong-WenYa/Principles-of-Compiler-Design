@@ -1,0 +1,8 @@
+0000000000000000 r .LCPI0_0
+                 U __isoc99_scanf
+                 U fprintf
+                 U free
+0000000000000000 T main
+                 U malloc
+                 U printf
+                 U stderr

@@ -1,0 +1,105 @@
+
+;; Function __bswap_16 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint16_t) __builtin_bswap16 ((int) __bsx);
+}
+
+
+;; Function __bswap_32 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint32_t) __builtin_bswap32 (__bsx);
+}
+
+
+;; Function __bswap_64 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint64_t) __builtin_bswap64 (__bsx);
+}
+
+
+;; Function __uint16_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint32_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint64_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function main (null)
+;; enabled by -tree-original
+
+
+{
+  int n;
+  double * fib = (double *) malloc ((long unsigned int) n * 8);
+
+    int n;
+  scanf ((const char * restrict) "%d", &n);
+    double * fib = (double *) malloc ((long unsigned int) n * 8);
+  if (fib == 0B)
+    {
+      fprintf (stderr, (const char * restrict) "Memory allocation failed\n");
+      return 1;
+    }
+  *fib = 0.0;
+  if (n > 1)
+    {
+      *(fib + 8) = 1.0e+0;
+    }
+  {
+    int i = 2;
+
+        int i = 2;
+    goto <D.2872>;
+    <D.2871>:;
+    *(fib + (sizetype) ((long unsigned int) i * 8)) = *(fib + ((sizetype) ((long unsigned int) i * 8) + 18446744073709551608)) + *(fib + ((sizetype) ((long unsigned int) i * 8) + 18446744073709551600));
+    i++ ;
+    <D.2872>:;
+    if (i < n) goto <D.2871>; else goto <D.2869>;
+    <D.2869>:;
+  }
+  {
+    int i = 0;
+
+        int i = 0;
+    goto <D.2876>;
+    <D.2875>:;
+    printf ((const char * restrict) "%lf\n", *(fib + (sizetype) ((long unsigned int) i * 8)));
+    i++ ;
+    <D.2876>:;
+    if (i < n) goto <D.2875>; else goto <D.2873>;
+    <D.2873>:;
+  }
+  free ((void *) fib);
+  return 0;
+}
+return 0;
+

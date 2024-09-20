@@ -1,105 +1,132 @@
-.text
-.file	"fac.c"                              # 源文件名是 fac.c
-.globl	factorial                           # 声明 factorial 函数是全局可见的
-.p2align	4, 0x90                          # 对齐指令，优化性能
-.type	factorial,@function                 # 声明 factorial 是一个函数
-factorial:                                 # 函数 factorial 的入口
-	.cfi_startproc                         # 标记函数的开始
-# %bb.0:
-	pushq	%rbp                           # 保存调用者的基指针
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp                     # 将栈指针保存在基指针中
-	.cfi_def_cfa_register %rbp
-	movl	%edi, -12(%rbp)                # 将参数 n 保存到栈中（%edi 中保存第一个参数 n）
-	movl	$1, -8(%rbp)                   # 初始化 result 为 1
-	movl	$1, -4(%rbp)                   # 初始化 i 为 1
-.LBB0_1:                                  # 循环开始
-	movl	-4(%rbp), %eax                 # 将 i 的值存入 %eax 寄存器
-	cmpl	-12(%rbp), %eax                # 比较 i 和 n
-	jg	.LBB0_4                         # 如果 i > n 跳转到循环结束
-# %bb.2:                                  # 循环体
-	movl	-4(%rbp), %eax                 # 将 i 的值存入 %eax 寄存器
-	imull	-8(%rbp), %eax                 # 计算 result * i
-	movl	%eax, -8(%rbp)                 # 将结果保存到 result
-# %bb.3:                                  # 更新循环变量 i
-	movl	-4(%rbp), %eax                 # 将 i 的值存入 %eax 寄存器
-	addl	$1, %eax                       # i += 1
-	movl	%eax, -4(%rbp)                 # 将更新后的 i 保存到栈中
-	jmp	.LBB0_1                         # 跳转回循环开始
-.LBB0_4:                                  # 循环结束
-	movl	-8(%rbp), %eax                 # 将 result 的值存入 %eax
-	popq	%rbp                           # 恢复调用者的基指针
-	.cfi_def_cfa %rsp, 8
-	retq                                 # 返回
-.Lfunc_end0:
-	.size	factorial, .Lfunc_end0-factorial  # 定义函数大小
-	.cfi_endproc                           # 标记函数结束
+.option nopic                               # 禁用位置无关代码
+.text                                        # 开始代码段
+.align	1                                    # 将接下来的代码对齐到2^1=2字节边界
+.globl	factorial                            # 将 'factorial' 声明为全局符号
+.type	factorial, @function                  # 将 'factorial' 声明为函数类型
 
-# 主函数开始
-.globl	main                               # 声明 main 函数是全局可见的
-.p2align	4, 0x90                         # 对齐指令，优化性能
-.type	main,@function                    # 声明 main 是一个函数
-main:                                    # main 函数入口
-	.cfi_startproc                         # 标记函数的开始
-# %bb.0:
-	pushq	%rbp                           # 保存调用者的基指针
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp                     # 将栈指针保存在基指针中
-	.cfi_def_cfa_register %rbp
-	pushq	%rbx                           # 保存 %rbx 寄存器的值
-	pushq	%rax                           # 保存 %rax 寄存器的值
-	.cfi_offset %rbx, -24
-	movl	$0, -16(%rbp)                  # 初始化 number 变量
-	movabsq	$.L.str, %rdi                  # 加载第一个字符串常量到 %rdi，作为 printf 的参数
-	movb	$0, %al                        # 清除 %al 寄存器
-	callq	printf@PLT                     # 调用 printf 打印提示信息
-	movabsq	$.L.str.1, %rdi                # 加载第二个字符串常量到 %rdi，作为 scanf 的格式化字符串
-	leaq	-12(%rbp), %rsi                # 计算 number 变量的地址，并存入 %rsi
-	movb	$0, %al                        # 清除 %al 寄存器
-	callq	__isoc99_scanf@PLT             # 调用 scanf 获取用户输入
-	cmpl	$0, -12(%rbp)                  # 检查 number 是否为非负数
-	jge	.LBB1_2                         # 如果 number >= 0，跳转到计算阶乘部分
-# %bb.1:
-	movabsq	$.L.str.2, %rdi                # 加载错误消息字符串到 %rdi
-	movb	$0, %al                        # 清除 %al 寄存器
-	callq	printf@PLT                     # 打印错误消息
-	jmp	.LBB1_3                         # 跳转到程序结束部分
-.LBB1_2:                                  # 计算阶乘部分
-	movl	-12(%rbp), %ebx                # 将 number 的值存入 %ebx
-	movl	-12(%rbp), %edi                # 将 number 的值作为 factorial 的参数
-	callq	factorial                      # 调用 factorial 函数
-	movabsq	$.L.str.3, %rdi                # 加载输出格式字符串到 %rdi
-	movl	%ebx, %esi                     # 将原始 number 的值作为输出的第一个参数
-	movl	%eax, %edx                     # 将 factorial 的结果作为输出的第二个参数
-	movb	$0, %al                        # 清除 %al 寄存器
-	callq	printf@PLT                     # 打印阶乘结果
-.LBB1_3:                                  # 程序结束部分
-	xorl	%eax, %eax                     # 返回 0
-	addq	$8, %rsp                       # 恢复栈指针
-	popq	%rbx                           # 恢复 %rbx 寄存器的值
-	popq	%rbp                           # 恢复调用者的基指针
-	.cfi_def_cfa %rsp, 8
-	retq                                 # 返回
-.Lfunc_end1:
-	.size	main, .Lfunc_end1-main           # 定义函数大小
-	.cfi_endproc                           # 标记函数结束
+factorial:
+	addi	sp,sp,-128                          # 分配栈空间
+	sd	s0,120(sp)                           # 保存 s0 到栈上
+	addi	s0,sp,128                           # 设置 s0 指针
+	mv	a5,a0                                 # 将输入 n 移动到 a5
+	sw	a5,-116(s0)                          # 将 n 存储到栈上
+	lui	a5,%hi(.LC0)                        # 加载浮点常量的高位
+	flw	fa5,%lo(.LC0)(a5)                   # 加载浮点常量
+	fsw	fa5,-20(s0)                         # 将其存储到栈上
+	li	a5,1                                 # 初始化结果为 1
+	sw	a5,-24(s0)                          # 将 1 存储到栈上
+	j	.L2                                   # 跳转到循环条件
 
-# 字符串常量部分
-.type	.L.str,@object                     # 字符串类型定义
-.section	.rodata.str1.1,"aMS",@progbits,1  # 只读数据段
-.L.str:                                    # 定义第一个字符串（提示信息）
-	.size	.L.str, 24                      # 字符串大小
+.L3:                                          # 循环标签
+	lw	a5,-24(s0)                           # 加载当前阶乘值
+	fcvt.s.w	fa5,a5                           # 将整数转换为浮点数
+	flw	fa4,-20(s0)                          # 加载之前的结果
+	fmul.s	fa5,fa4,fa5                        # 乘法: 结果 *= i
+	fsw	fa5,-20(s0)                         # 存储更新后的结果
+	lw	a5,-24(s0)                           # 加载当前 i
+	slli	a5,a5,2                             # 将 i 乘以 4 用于索引
+	addi	a5,a5,-16                           # 调整索引以存储结果
+	add	a5,a5,s0                             # 获取结果存储地址
+	flw	fa5,-20(s0)                          # 加载最新结果
+	fsw	fa5,-88(a5)                          # 存储到结果数组中
+	lw	a5,-24(s0)                           # 加载当前 i
+	addiw	a5,a5,1                             # 递增 i
+	sw	a5,-24(s0)                           # 存储更新后的 i
 
-.type	.L.str.1,@object                   # 字符串类型定义
-.L.str.1:                                  # 定义第二个字符串（scanf 格式化字符串）
-	.asciz	"%d"                           # "%d"
-	.size	.L.str.1, 3                     # 字符串大小
+.L2:                                          # 检查循环条件
+	lw	a5,-24(s0)                           # 加载 i
+	mv	a4,a5                                 # 将 i 复制到 a4
+	lw	a5,-116(s0)                          # 加载 n
+	sext.w	a4,a4                              # 符号扩展 i
+	sext.w	a5,a5                              # 符号扩展 n
+	ble	a4,a5,.L3                            # 如果 i <= n，继续循环
 
+	flw	fa5,-20(s0)                          # 加载最终结果
+	fmv.s	fa0,fa5                            # 将结果移动到 a0（返回值）
+	ld	s0,120(sp)                           # 恢复保存的 s0
+	addi	sp,sp,128                           # 释放栈空间
+	jr	ra                                   # 从函数返回
+	.size	factorial, .-factorial
 
-.type	.L.str.3,@object                   # 结果输出格式字符串定义
-.L.str.3:
-	.size	.L.str.3, 20                    # 字符串大小
+.section	.rodata                            # 只读数据段
+.align	3                                   # 对齐到8字节边界
+.LC1:                                         # 字符串: 输入提示
+	.string	"请输入一个非负整数: "
+	.align	3
+.LC2:                                         # scanf 格式字符串
+	.string	"%d"
+	.align	3
+.LC3:                                         # 字符串: 对负数输入的错误信息
+	.string	"阶乘只适用于非负整数。"
+	.align	3
+.LC4:                                         # 格式字符串: 范围错误信息
+	.string	"请输入一个小于 %d 的整数。\n"
+	.align	3
+.LC5:                                         # 格式字符串: 输出结果
+	.string	"%d 的阶乘是 %.1f\n"
+	.text
+	.align	1
+	.globl	main                               # 将 'main' 声明为全局符号
+	.type	main, @function                    # 将 'main' 声明为函数类型
 
+main:
+	addi	sp,sp,-48                          # 分配栈空间
+	sd	ra,40(sp)                           # 保存返回地址
+	sd	s0,32(sp)                           # 保存 s0
+	sd	s1,24(sp)                           # 保存 s1
+	addi	s0,sp,48                           # 设置 s0 指针
+	lui	a5,%hi(.LC1)                       # 加载输入提示的高位
+	addi	a0,a5,%lo(.LC1)                   # 加载输入提示字符串的地址
+	call	printf                             # 调用 printf 显示提示
+	addi	a5,s0,-36                          # 准备存储输入
+	mv	a1,a5                               # 将地址移动用于 scanf
+	lui	a5,%hi(.LC2)                       # 加载 scanf 格式的高位
+	addi	a0,a5,%lo(.LC2)                   # 加载格式字符串
+	call	__isoc99_scanf                    # 调用 scanf 读取输入
+	lw	a5,-36(s0)                          # 加载输入的数字
+	bge	a5,zero,.L6                        # 如果数字 >= 0，继续
+
+	lui	a5,%hi(.LC3)                       # 加载错误信息的高位
+	addi	a0,a5,%lo(.LC3)                   # 加载错误信息的地址
+	call	puts                              # 调用 puts 显示错误信息
+	j	.L7                                  # 跳转到退出
+
+.L6:                                          # 检查输入范围
+	lw	a5,-36(s0)                          # 加载数字
+	mv	a4,a5                               # 将数字移动到 a4
+	li	a5,19                               # 设置阶乘的最大值
+	ble	a4,a5,.L8                          # 如果数字 <= 19，继续
+
+	li	a1,20                               # 设置 a1 为 20 用于错误信息
+	lui	a5,%hi(.LC4)                       # 加载范围错误信息的高位
+	addi	a0,a5,%lo(.LC4)                   # 加载格式字符串
+	call	printf                             # 调用 printf 显示错误信息
+	j	.L7                                  # 跳转到退出
+
+.L8:                                          # 调用阶乘函数
+	lw	s1,-36(s0)                          # 加载原始数字
+	lw	a5,-36(s0)                          # 再次加载数字
+	mv	a0,a5                               # 将数字移动到 a0 以调用阶乘
+	call	factorial                          # 调用阶乘函数
+	fmv.s	fa5,fa0                            # 将结果移动到 fa5
+	fcvt.d.s	fa5,fa5                          # 将浮点数转换为双精度
+	fmv.x.d	a2,fa5                            # 将双精度移动到整数以打印
+	mv	a1,s1                               # 准备参数用于 printf
+	lui	a5,%hi(.LC5)                       # 加载结果信息的高位
+	addi	a0,a5,%lo(.LC5)                   # 加载格式字符串
+	call	printf                             # 调用 printf 显示结果
+
+.L7:                                          # 退出序列
+	li	a5,0                                # 设置返回值为 0
+	mv	a0,a5                               # 将返回值移动到 a0
+	ld	ra,40(sp)                           # 恢复返回地址
+	ld	s0,32(sp)                           # 恢复 s0
+	ld	s1,24(sp)                           # 恢复 s1
+	addi	sp,sp,48                           # 释放栈空间
+	jr	ra                                   # 从 main 返回
+	.size	main, .-main
+	.section	.rodata                          # 只读数据段
+	.align	2
+.LC0:
+	.word	1065353216                        # 浮点常量（1.0 在 IEEE 754 中的表示）
 

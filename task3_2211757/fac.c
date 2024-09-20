@@ -1,25 +1,34 @@
 #include <stdio.h>
 
-// 函数定义：计算n的阶乘
-int factorial(int n) {
-    int result = 1;
+#define MAX_SIZE 20 
+
+
+float factorial(int n) {
+    float result = 1.0f;
+    float results[MAX_SIZE];
+
+  
     for (int i = 1; i <= n; i++) {
-        result *= i;
+        result *= i; 
+        results[i] = result; 
     }
-    return result;
+
+    return result; 
 }
 
 int main() {
     int number;
-    
-    printf("请输入一个整数: ");
+
+    printf("Please enter a non-negative integer: ");
     scanf("%d", &number);
-    
+
     if (number < 0) {
-        printf("阶乘只适用于非负整数。\n");
+        printf("Factorial is only defined for non-negative integers.\n");
+    } else if (number >= MAX_SIZE) {
+        printf("Please enter an integer less than %d.\n", MAX_SIZE);
     } else {
-        printf("%d 的阶乘是 %d\n", number, factorial(number));
+        printf("The factorial of %d is %.1f\n", number, factorial(number));
     }
-    
+
     return 0;
 }

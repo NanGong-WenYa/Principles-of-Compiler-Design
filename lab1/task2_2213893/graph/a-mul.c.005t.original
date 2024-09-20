@@ -1,0 +1,34 @@
+
+;; Function main (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int n;
+  int f;
+
+    int i;
+    int n;
+    int f;
+  i = 2;
+  f = 1;
+  scanf ((const char * restrict) "%d", &n);
+  if (n > 10000)
+    {
+      printf ((const char * restrict) "your should input a lower word\n");
+    }
+  else
+    {
+      printf ((const char * restrict) "wait for result\n");
+    }
+  goto <D.3180>;
+  <D.3181>:;
+  f = f * i;
+  i = i * 2;
+  <D.3180>:;
+  if (i <= n) goto <D.3181>; else goto <D.3179>;
+  <D.3179>:;
+  printf ((const char * restrict) "%d\n", f);
+}
+

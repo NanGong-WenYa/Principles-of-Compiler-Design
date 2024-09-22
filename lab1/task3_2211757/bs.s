@@ -3,12 +3,12 @@
 .globl bubbleSort
 .type bubbleSort, @function
 bubbleSort:
-    addi sp, sp, -48             # 为栈帧分配空间
+    addi sp, sp, -48             # 为栈帧分配空间，void bubbleSort(float* arr, int n)
     sd s0, 40(sp)                # 保存 s0 寄存器
     addi s0, sp, 48              # 设置 s0 指向栈帧顶部
-    sd a0, -40(s0)               # 保存数组指针
+    sd a0, -40(s0)               
     mv a5, a1                    # 将数组长度存入 a5
-    sw a5, -44(s0)               # 保存长度
+    sw a5, -44(s0)               
     sw zero, -20(s0)             # 初始化外层循环计数器为 0
     j .L2                        # 跳转到外层循环判断
 
@@ -16,12 +16,14 @@ bubbleSort:
     sw zero, -24(s0)             # 初始化内层循环计数器为 0
     j .L3                        # 跳转到内层循环判断
 
-.L6:
-    lw a5, -24(s0)               # 读取内层循环计数器
+.L6:                             #float temp = arr[j]; // 将 arr[j] 存储到临时变量 temp
+
+    lw a5, -24(s0)               # 读取内层循环计数器，float temp = arr[j]; // arr[j]
     slli a5, a5, 2               # 乘以 4 以获得字节偏移
     ld a4, -40(s0)               # 加载数组指针
     add a5, a4, a5               # 计算 arr[i]
     flw fa4, 0(a5)               # 加载 arr[i] 到 fa4
+	
     lw a5, -24(s0)               # 读取内层循环计数器
     addi a5, a5, 1                # i + 1
     slli a5, a5, 2               # 乘以 4 以获得字节偏移
@@ -34,7 +36,7 @@ bubbleSort:
     lw a5, -24(s0)               # 读取内层循环计数器
     slli a5, a5, 2               # 乘以 4 以获得字节偏移
     ld a4, -40(s0)               # 加载数组指针
-    add a5, a4, a5               # 计算 arr[i]
+    add a5, a4, a5               # 计算 arr[i]地址
     flw fa5, 0(a5)               # 加载 arr[i] 到 fa5
     fsw fa5, -28(s0)             # 保存 arr[i] 到临时存储
 
@@ -42,7 +44,8 @@ bubbleSort:
     addi a5, a5, 1                # i + 1
     slli a5, a5, 2               # 乘以 4 以获得字节偏移
     ld a4, -40(s0)               # 加载数组指针
-    add a4, a4, a5               # 计算 arr[i + 1]
+    add a4, a4, a5               # 计算 arr[i + 1]地址
+	
     lw a5, -24(s0)               # 读取内层循环计数器
     slli a5, a5, 2               # 乘以 4 以获得字节偏移
     ld a3, -40(s0)               # 加载数组指针
@@ -64,7 +67,7 @@ bubbleSort:
     addiw a5, a5, -1             # n - i - 1
     sext.w a4, a5                # 符号扩展
     lw a5, -24(s0)               # 读取内层循环计数器
-    sext.w a5, a5                # 符号扩展
+    sext.w a5, a5                # 符号扩展，blt 指令需要比较两个 64 位的数
     blt a5, a4, .L6              # 如果 j < n - i，继续内层循环
 
     lw a5, -20(s0)               # 读取外层循环计数器
@@ -79,9 +82,9 @@ bubbleSort:
     sext.w a5, a5                # 符号扩展
     blt a5, a4, .L7              # 如果 i < n - 1，继续外层循环
 
+    nop                          #数据冒险，blt a5, a4, .L7：这个分支指令依赖于之前的 sext.w 指令的结果
     nop
-    nop
-    ld s0, 40(sp)                # 恢复 s0 寄存器
+    ld s0, 40(sp)                # 恢复 s0 寄存器，这条指令从栈中加载之前保存的 s0 寄存器的值，恢复其状态。因为在函数开始时，s0 的值被保存在栈上，这一步确保在返回时，s0 的值与函数调用之前相同。
     addi sp, sp, 48              # 释放栈空间
     jr ra                        # 返回
 
@@ -112,16 +115,16 @@ bubbleSort:
 main:
     addi sp, sp, -128            # 为栈帧分配空间
     sd ra, 120(sp)               # 保存返回地址
-    sd s0, 112(sp)               # 保存 s0
-    sd s1, 104(sp)               # 保存 s1
-    sd s2, 96(sp)                # 保存 s2
-    sd s3, 88(sp)                # 保存 s3
-    sd s4, 80(sp)                # 保存 s4
-    sd s5, 72(sp)                # 保存 s5
-    sd s6, 64(sp)                # 保存 s6
-    sd s7, 56(sp)                # 保存 s7
-    sd s8, 48(sp)                # 保存 s8
-    sd s9, 40(sp)                # 保存 s9
+    sd s0, 112(sp)              
+    sd s1, 104(sp)              
+    sd s2, 96(sp)               
+    sd s3, 88(sp)               
+    sd s4, 80(sp)               
+    sd s5, 72(sp)                
+    sd s6, 64(sp)                
+    sd s7, 56(sp)                
+    sd s8, 48(sp)                
+    sd s9, 40(sp)                
 
     addi s0, sp, 128             # 设置 s0 指向栈帧顶部
     mv a5, sp                    # 获取当前栈指针
@@ -242,15 +245,15 @@ main:
     addi sp, s0, -128            # 释放栈空间
 
     ld ra, 120(sp)               # 恢复返回地址
-    ld s0, 112(sp)               # 恢复 s0
-    ld s1, 104(sp)               # 恢复 s1
-    ld s2, 96(sp)                # 恢复 s2
-    ld s3, 88(sp)                # 恢复 s3
-    ld s4, 80(sp)                # 恢复 s4
-    ld s5, 72(sp)                # 恢复 s5
-    ld s6, 64(sp)                # 恢复 s6
-    ld s7, 56(sp)                # 恢复 s7
-    ld s8, 48(sp)                # 恢复 s8
-    ld s9, 40(sp)                # 恢复 s9
+    ld s0, 112(sp)               
+    ld s1, 104(sp)              
+    ld s2, 96(sp)               
+    ld s3, 88(sp)                
+    ld s4, 80(sp)               
+    ld s5, 72(sp)               
+    ld s6, 64(sp)               
+    ld s7, 56(sp)                
+    ld s8, 48(sp)                
+    ld s9, 40(sp)                
     addi sp, sp, 128             # 恢复栈空间
-    jr ra                        # 返回
+    jr ra                        

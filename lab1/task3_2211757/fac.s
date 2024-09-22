@@ -1,8 +1,8 @@
-.option nopic                               # 禁用位置无关代码
-.text                                        # 开始代码段
-.align	1                                    # 将接下来的代码对齐到2^1=2字节边界
-.globl	factorial                            # 将 'factorial' 声明为全局符号
-.type	factorial, @function                  # 将 'factorial' 声明为函数类型
+.option nopic                               
+.text                                        
+.align	1                                   
+.globl	factorial                           
+.type	factorial, @function                  
 
 factorial:
 	addi	sp,sp,-128                          # 分配栈空间
@@ -48,26 +48,26 @@ factorial:
 	jr	ra                                   # 从函数返回
 	.size	factorial, .-factorial
 
-.section	.rodata                            # 只读数据段
+.section	.rodata                            
 .align	3                                   # 对齐到8字节边界
-.LC1:                                         # 字符串: 输入提示
+.LC1:                                         
 	.string	"请输入一个非负整数: "
 	.align	3
-.LC2:                                         # scanf 格式字符串
+.LC2:                                         
 	.string	"%d"
 	.align	3
-.LC3:                                         # 字符串: 对负数输入的错误信息
+.LC3:                                         
 	.string	"阶乘只适用于非负整数。"
 	.align	3
-.LC4:                                         # 格式字符串: 范围错误信息
+.LC4:                                         
 	.string	"请输入一个小于 %d 的整数。\n"
 	.align	3
-.LC5:                                         # 格式字符串: 输出结果
+.LC5:                                         
 	.string	"%d 的阶乘是 %.1f\n"
 	.text
 	.align	1
-	.globl	main                               # 将 'main' 声明为全局符号
-	.type	main, @function                    # 将 'main' 声明为函数类型
+	.globl	main                               
+	.type	main, @function                    
 
 main:
 	addi	sp,sp,-48                          # 分配栈空间
@@ -128,5 +128,5 @@ main:
 	.section	.rodata                          # 只读数据段
 	.align	2
 .LC0:
-	.word	1065353216                        # 浮点常量（1.0 在 IEEE 754 中的表示）
+	.word	1065353216                        
 
